@@ -29,6 +29,8 @@ import com.journeyapps.barcodescanner.ScanOptions;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseReference;
 
 public class MainActivity extends AppCompatActivity {
     private FrameLayout exploreFrame, homeFrame, communityFrame;
@@ -48,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        FirebaseDatabase database=FirebaseDatabase.getlnstance();
+        DatabaseReference myref=database.getReference("message");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
